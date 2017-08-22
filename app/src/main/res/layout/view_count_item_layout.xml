@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:padding="@dimen/dp15"
+    android:id="@+id/rl_item"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:id="@+id/ll_repair"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="11111111"
+            android:textSize="@dimen/sp20"
+            android:id="@+id/tv_count_line1"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="111"
+            android:textSize="@dimen/sp20"
+            android:id="@+id/tv_count_line2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

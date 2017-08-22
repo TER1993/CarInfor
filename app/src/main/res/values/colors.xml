@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_80323232">#80323232</color>
+    <color name="color_black">#000000</color>
+    <color name="color_clear">#00000000</color>
+    <color name="color_block">#60000000</color>
+    <color name="color_dark_blue">#a04b8bec</color>
+    <color name="color_light_blue">#12b7f5</color>
+    <color name="color_line">#696969</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_orange">#FF7F50</color>
+    <color name="theme">#8037ade0</color>
+    <color name="gray_light">#80c0c0c0</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#0fC9CACB</color>
+    <color name="deep_gray">#c0c0c0</color>
+    <color name="lightBlue">#E0FFFF</color>
+    <color name="blue_menu">#1C67AD</color>
+    <color name="blue_menu_press">#74B5DF</color>
+    <color name="title">#212121</color>
+    <color name="orange">#ff8000</color>
+    <color name="blue_button">#77cfe9</color>
+    <color name="red">#ff0000</color>
+    <color name="orange_2">#ff962d</color>
+    <color name="transparency">#b0000000</color>
+    <color name="green">#2a6fc3</color>
+
+</resources>

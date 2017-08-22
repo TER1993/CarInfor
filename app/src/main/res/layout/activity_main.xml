@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:text="导入excel表格"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/btn_import"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="导入"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_alibuybutton" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="导出测试"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_alibuybutton" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:src="@mipmap/u25"
+                android:id="@+id/iv_write"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:contentDescription=""
+                />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:text="写标签"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:src="@mipmap/u18"
+                android:id="@+id/iv_check"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:contentDescription=""
+                />
+
+            <TextView
+
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:text="盘点"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
