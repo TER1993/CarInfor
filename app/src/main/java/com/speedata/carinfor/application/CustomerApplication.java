@@ -1,6 +1,7 @@
 package com.speedata.carinfor.application;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import com.speedata.carinfor.db.bean.BaseInfor;
 import com.speedata.libuhf.IUHFService;
@@ -35,13 +36,20 @@ public class CustomerApplication extends Application {
         super.onCreate();
         sInstance = this;
         iuhfService = UHFManager.getUHFService(this);
+        if (iuhfService.OpenDev() == 0) {
+            Toast.makeText(this, "上电成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "上电失败", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
     @Override
     public void onTerminate() {
         super.onTerminate();
+        iuhfService.CloseDev();
     }
+
 
     public int getChangeuser() {
         return changeuser;

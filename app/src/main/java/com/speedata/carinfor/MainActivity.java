@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -99,4 +100,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ProgressDialogUtils.dismissProgressDialog();
         super.onResume();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        application.onTerminate();
+        System.exit(0);
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 判断是否按下“BACK”(返回)键
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 弹出退出时的对话框
+            finish();
+            // 返回true以表示消费事件，避免按默认的方式处理“BACK”键的事件
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

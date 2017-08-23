@@ -33,7 +33,6 @@ import com.speedata.carinfor.db.dao.BaseInforDao;
 import com.speedata.carinfor.dialog.SearchTagDialog;
 import com.speedata.carinfor.interfaces.DialogListener;
 import com.speedata.carinfor.utils.MyDateAndTime;
-import com.speedata.carinfor.utils.ProgressDialogUtils;
 import com.speedata.libutils.excel.ExcelUtils;
 
 import java.io.File;
@@ -431,19 +430,6 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
     }
 
 
-    @Override
-    protected void onResume() {
-        ProgressDialogUtils.showProgressDialog(mContext, "上电中...");
-        super.onResume();
-        if (iuhfService.OpenDev() == 0) {
-            Toast.makeText(this, "上电成功", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "上电失败", Toast.LENGTH_SHORT).show();
-        }
-        ProgressDialogUtils.dismissProgressDialog();
-    }
-
-
     private void search(String input) {
         Log.d(TAG, "开始查询");
         List<BaseInfor> baseInfors = baseInforDao.imQueryList("CBrand=?", new String[]{input});
@@ -485,14 +471,6 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
-    protected void onStop() {
-        ProgressDialogUtils.showProgressDialog(mContext, "下电中...");
-        super.onStop();
-        iuhfService.CloseDev();
-        ProgressDialogUtils.dismissProgressDialog();
     }
 
 

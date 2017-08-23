@@ -26,7 +26,6 @@ import com.speedata.carinfor.db.dao.BaseInforDao;
 import com.speedata.carinfor.dialog.SearchTagDialog;
 import com.speedata.carinfor.interfaces.DialogListener;
 import com.speedata.carinfor.utils.MyDateAndTime;
-import com.speedata.carinfor.utils.ProgressDialogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -313,25 +312,6 @@ public class InforActivity extends Activity implements View.OnClickListener, Dia
         }
     }
 
-    @Override
-    protected void onResume() {
-        ProgressDialogUtils.showProgressDialog(mContext, "上电中...");
-        super.onResume();
-        if (iuhfService.OpenDev() == 0) {
-            Toast.makeText(this, "上电成功", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "上电失败", Toast.LENGTH_SHORT).show();
-        }
-        ProgressDialogUtils.dismissProgressDialog();
-    }
-
-    @Override
-    protected void onStop() {
-        ProgressDialogUtils.showProgressDialog(mContext, "下电中...");
-        super.onStop();
-        iuhfService.CloseDev();
-        ProgressDialogUtils.dismissProgressDialog();
-    }
 
     @Override
     public void onSetting(String name) {
