@@ -26,10 +26,9 @@ public class WriteAdapter extends CommonRvAdapter<BaseInfor> {
 
     @Override
     public void convert(BaseAdapterHelper helper, BaseInfor item, int position) {
-        helper.setText(R.id.tv_one_line1, item.getCardEPC());
-        helper.setText(R.id.tv_one_line2, item.getFrameNumber());
-        helper.setText(R.id.tv_one_line3, item.getBrand());
-        helper.setText(R.id.tv_one_line4, item.getColor());
+        helper.setText(R.id.tv_one_line1, item.getACardEPC());
+        helper.setText(R.id.tv_one_line2, item.getCBrand());
+        helper.setText(R.id.tv_one_line3, item.getDColor());
 
     }
 }

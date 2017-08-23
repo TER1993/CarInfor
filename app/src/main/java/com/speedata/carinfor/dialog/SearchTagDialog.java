@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.speedata.carinfor.R;
 import com.speedata.carinfor.application.CustomerApplication;
+import com.speedata.carinfor.interfaces.DialogListener;
 import com.speedata.libuhf.IUHFService;
 import com.speedata.libuhf.bean.Tag_Data;
 
@@ -47,6 +48,13 @@ public class SearchTagDialog extends Dialog implements
     private long scant = 0;
     private CheckBox cbb;
     private IUHFService iuhfService;
+
+
+    private DialogListener mSListener = null;
+    public void setOnSettingListener(DialogListener listener) {
+        mSListener = listener;
+    }
+
 
     public SearchTagDialog(Context context, IUHFService iuhfService) {
         super(context);
@@ -209,6 +217,9 @@ public class SearchTagDialog extends Dialog implements
         }
         int res = iuhfService.select_card(1,firm.get(arg2).epc,true);
         if (res == 0) {
+            if (mSListener != null) {
+                mSListener.onSetting(firm.get(arg2).epc);
+            }
             CustomerApplication.getInstance().setEPC(firm.get(arg2).epc);
             Toast.makeText(cont, "选卡成功", Toast.LENGTH_SHORT).show();
             dismiss();

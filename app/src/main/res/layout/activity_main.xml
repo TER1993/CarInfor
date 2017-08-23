@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:orientation="horizontal"
@@ -41,6 +42,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:textColor="@color/color_light_blue"
+        android:textSize="@dimen/sp50"
+        android:gravity="center"
+        android:text="永银安华"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
         android:gravity="center"
         android:orientation="horizontal"
@@ -56,7 +65,7 @@
 
 
             <ImageView
-                android:src="@mipmap/u25"
+                android:src="@mipmap/u18"
                 android:id="@+id/iv_write"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -71,7 +80,7 @@
                 android:layout_height="50dp"
                 android:textSize="30sp"
                 android:layout_weight="1"
-                android:text="写标签"
+                android:text="信息录入"
                 />
         </LinearLayout>
 
@@ -84,7 +93,7 @@
 
 
             <ImageView
-                android:src="@mipmap/u18"
+                android:src="@mipmap/u25"
                 android:id="@+id/iv_check"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -101,7 +110,7 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:text="盘点"
+                android:text="信息查询"
                 />
 
 

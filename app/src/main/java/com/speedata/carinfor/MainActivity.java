@@ -49,7 +49,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         daolist = new ArrayList<>();
         mlist = baseInforDao.imQueryList();
         application = (CustomerApplication) getApplication();
-        application.setList(mlist);
+
+        //查一下数据库，没信息就填一下表头
+
+        List<BaseInfor> baseInforList = new ArrayList<>();
+        baseInforList = baseInforDao.imQueryList();
+        if (baseInforList.size() == 0) { //无内容则添加表头
+            BaseInfor baseInfor = new BaseInfor();
+            baseInfor.setACardEPC("卡号EPC");
+            baseInfor.setBFrameNumber("车架号");
+            baseInfor.setCBrand("品牌");
+            baseInfor.setDColor("颜色");
+            baseInfor.setEKilometers("公里数");
+            baseInfor.setFParkingLocation("存车位置");
+            baseInfor.setGApproachTime("进场时间");
+            baseInforDao.imInsert(baseInfor);
+        }
+
 
     }
 
@@ -72,6 +88,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
-
-
+    @Override
+    protected void onResume() {
+        ProgressDialogUtils.dismissProgressDialog();
+        super.onResume();
+    }
 }

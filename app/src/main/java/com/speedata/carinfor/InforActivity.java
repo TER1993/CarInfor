@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +24,7 @@ import com.speedata.carinfor.application.CustomerApplication;
 import com.speedata.carinfor.db.bean.BaseInfor;
 import com.speedata.carinfor.db.dao.BaseInforDao;
 import com.speedata.carinfor.dialog.SearchTagDialog;
+import com.speedata.carinfor.interfaces.DialogListener;
 import com.speedata.carinfor.utils.MyDateAndTime;
 import com.speedata.carinfor.utils.ProgressDialogUtils;
 
@@ -31,7 +33,7 @@ import java.util.List;
 
 import static com.speedata.carinfor.application.CustomerApplication.iuhfService;
 
-public class InforActivity extends Activity implements View.OnClickListener {
+public class InforActivity extends Activity implements View.OnClickListener, DialogListener {
 
     private Button btnSearch; //寻卡选卡
     private Button btnInput; //录入内容
@@ -204,8 +206,7 @@ public class InforActivity extends Activity implements View.OnClickListener {
 
         //时间说明
         etApproachTime.setText("自动写入当前系统时间");
-        etCardEPC.setText("选卡后自动记录卡EPC");
-        etCardEPC.setText("");
+        etCardEPC.setText("未选卡");
         etBrand.setText("");
         etColor.setText("");
         etKilometers.setText("");
@@ -233,6 +234,7 @@ public class InforActivity extends Activity implements View.OnClickListener {
                 //盘点选卡
                 SearchTagDialog searchTag = new SearchTagDialog(this, iuhfService);
                 searchTag.setTitle("选卡");
+                searchTag.setOnSettingListener(this);
                 searchTag.show();
 
                 break;
@@ -243,6 +245,9 @@ public class InforActivity extends Activity implements View.OnClickListener {
 
                 break;
 
+            case R.id.iv_left:
+                finish();
+                break;
         }
     }
 
@@ -251,29 +256,35 @@ public class InforActivity extends Activity implements View.OnClickListener {
 
         List<BaseInfor> baseInfors = new ArrayList<>();
         BaseInfor baseInfor = new BaseInfor();
-        baseInfor.setCardEPC(application.getEPC());
-        baseInfor.setFrameNumber(etFrameNumber.getText().toString());
+
+        if ("未选卡".equals(etCardEPC.getText().toString())) {
+            Toast.makeText(this, "请先选择一个卡EPC再写入数据", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        baseInfor.setACardEPC(application.getEPC());
+        baseInfor.setBFrameNumber(etFrameNumber.getText().toString());
         String brand = etBrand.getText().toString();
         if ("".equals(brand)) {
-            baseInfor.setBrand(mBrand);
+            baseInfor.setCBrand(mBrand);
         } else {
-            baseInfor.setBrand(etBrand.getText().toString());
+            baseInfor.setCBrand(etBrand.getText().toString());
         }
         String color = etColor.getText().toString();
         if ("".equals(color)) {
-            baseInfor.setBrand(mColor);
+            baseInfor.setDColor(mColor);
         } else {
-            baseInfor.setBrand(etColor.getText().toString());
+            baseInfor.setDColor(etColor.getText().toString());
         }
         String kilometers = etKilometers.getText().toString();
-        baseInfor.setKilometers(kilometers);
+        baseInfor.setEKilometers(kilometers);
         String parkinglocation = etParkingLocation.getText().toString();
-        baseInfor.setParkingLocation(parkinglocation);
-        baseInfor.setApproachTime(MyDateAndTime.getTimeString());
+        baseInfor.setFParkingLocation(parkinglocation);
+        baseInfor.setGApproachTime(MyDateAndTime.getTimeString());
 
         baseInfors.add(baseInfor);
 
-        baseInforDao.imDelete("CardEPC=?", new String[]{baseInfor.getCardEPC()});
+        baseInforDao.imDelete("ACardEPC=?", new String[]{baseInfor.getACardEPC()});
         baseInforDao.imInsert(baseInfor);
 
         Toast.makeText(this, "导入成功", Toast.LENGTH_SHORT).show();
@@ -322,5 +333,21 @@ public class InforActivity extends Activity implements View.OnClickListener {
         ProgressDialogUtils.dismissProgressDialog();
     }
 
+    @Override
+    public void onSetting(String name) {
+        // TODO Auto-generated method stub
+        etCardEPC.setText(name);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 判断是否按下“BACK”(返回)键
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 弹出退出时的对话框
+            mExitDialog.show();
+            // 返回true以表示消费事件，避免按默认的方式处理“BACK”键的事件
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 }

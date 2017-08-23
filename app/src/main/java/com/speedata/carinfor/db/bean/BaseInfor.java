@@ -10,106 +10,102 @@ import com.speedata.libutils.excel.Excel;
 @Table(name = "BaseInfor")
 public  class BaseInfor { //导入excel表格内容
 
+
     @Excel(ignore = false, name = "卡号EPC")
-    @Column(name = "CardEPC")
-    private String CardEPC; //卡号EPC
+    @Column(name = "ACardEPC")
+    private String ACardEPC; //卡号EPC
 
     @Excel(ignore = false, name = "车架号")
-    @Column(name = "FrameNumber")
-    private String FrameNumber; //车架号
+    @Column(name = "BFrameNumber")
+    private String BFrameNumber; //车架号
 
     @Excel(ignore = false, name = "品牌")
-    @Column(name = "Brand")
-    private String Brand; //品牌
+    @Column(name = "CBrand")
+    private String CBrand; //品牌
 
     @Excel(ignore = false, name = "颜色")
-    @Column(name = "Color")
-    private String Color; //颜色
+    @Column(name = "DColor")
+    private String DColor; //颜色
 
     @Excel(ignore = false, name = "公里数")
-    @Column(name = "Kilometers")
-    private String Kilometers; //公里数
+    @Column(name = "EKilometers")
+    private String EKilometers; //公里数
 
     @Excel(ignore = false, name = "存车位置")
-    @Column(name = "ParkingLocation")
-    private String ParkingLocation; //存车位置
+    @Column(name = "FParkingLocation")
+    private String FParkingLocation; //存车位置
 
     @Excel(ignore = false, name = "进场时间")
-    @Column(name = "ApproachTime")
-    private String ApproachTime; //进场时间
+    @Column(name = "GApproachTime")
+    private String GApproachTime; //进场时间
 
 
-
-    public String getCardEPC() {
-        return CardEPC;
+    public String getACardEPC() {
+        return ACardEPC;
     }
 
-    public void setCardEPC(String cardEPC) {
-        CardEPC = cardEPC;
+    public void setACardEPC(String ACardEPC) {
+        this.ACardEPC = ACardEPC;
     }
 
-    public String getFrameNumber() {
-        return FrameNumber;
+    public String getBFrameNumber() {
+        return BFrameNumber;
     }
 
-    public void setFrameNumber(String frameNumber) {
-        FrameNumber = frameNumber;
+    public void setBFrameNumber(String BFrameNumber) {
+        this.BFrameNumber = BFrameNumber;
     }
 
-    public String getBrand() {
-        return Brand;
+    public String getCBrand() {
+        return CBrand;
     }
 
-    public void setBrand(String brand) {
-        Brand = brand;
+    public void setCBrand(String CBrand) {
+        this.CBrand = CBrand;
     }
 
-    public String getColor() {
-        return Color;
+    public String getDColor() {
+        return DColor;
     }
 
-    public void setColor(String color) {
-        Color = color;
+    public void setDColor(String DColor) {
+        this.DColor = DColor;
     }
 
-    public String getKilometers() {
-        return Kilometers;
+    public String getEKilometers() {
+        return EKilometers;
     }
 
-    public void setKilometers(String kilometers) {
-        Kilometers = kilometers;
+    public void setEKilometers(String EKilometers) {
+        this.EKilometers = EKilometers;
     }
 
-    public String getParkingLocation() {
-        return ParkingLocation;
+    public String getFParkingLocation() {
+        return FParkingLocation;
     }
 
-    public void setParkingLocation(String parkingLocation) {
-        ParkingLocation = parkingLocation;
+    public void setFParkingLocation(String FParkingLocation) {
+        this.FParkingLocation = FParkingLocation;
     }
 
-    public String getApproachTime() {
-        return ApproachTime;
+    public String getGApproachTime() {
+        return GApproachTime;
     }
 
-    public void setApproachTime(String approachTime) {
-        ApproachTime = approachTime;
+    public void setGApproachTime(String GApproachTime) {
+        this.GApproachTime = GApproachTime;
     }
-
-
-
 
     @Override
     public String toString() {
         return "BaseInfor{" +
-                "CardEPC='" + CardEPC + '\'' +
-                ", FrameNumber='" + FrameNumber + '\'' +
-                ", Brand='" + Brand + '\'' +
-                ", Color='" + Color + '\'' +
-                ", Kilometers='" + Kilometers + '\'' +
-                ", ParkingLocation='" + ParkingLocation + '\'' +
-                ", ApproachTime='" + ApproachTime + '\'' +
+                "ACardEPC='" + ACardEPC + '\'' +
+                ", BFrameNumber='" + BFrameNumber + '\'' +
+                ", CBrand='" + CBrand + '\'' +
+                ", DColor='" + DColor + '\'' +
+                ", EKilometers='" + EKilometers + '\'' +
+                ", FParkingLocation='" + FParkingLocation + '\'' +
+                ", GApproachTime='" + GApproachTime + '\'' +
                 '}';
     }
-
 }

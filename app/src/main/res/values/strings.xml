@@ -249,7 +249,7 @@
     <string name="success_output">导出成功，文件位于根目录</string>
     <string name="txt">.txt</string>
     <string name="singleton_">singleton_</string>
-    <string name="count_title">盘点</string>
+    <string name="count_title">信息查询</string>
     <string name="count_">count_</string>
     <string name="out_title">退出本次扫描</string>
     <string name="out_message">确定要退出当前页面吗</string>

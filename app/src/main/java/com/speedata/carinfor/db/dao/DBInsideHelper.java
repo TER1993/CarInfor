@@ -19,7 +19,7 @@ public class DBInsideHelper extends AbDBHelper {
     private static final String DBNAME = "test.db";
 
     // 当前数据库的版本
-    private static final int DBVERSION = 1;
+    private static final int DBVERSION = 4;
     // 要初始化的表
     // private static final Class<?>[] clazz = {DeviceBean.class,
     // WaybillBean.class
