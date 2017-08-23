@@ -263,14 +263,12 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
         }
         List<BaseInfor> resultList = new ArrayList<>();
 
-        if ("卡号EPC".equals(mList.get(0).getACardEPC())) { //有头不用处理，无头需要处理
-            resultList.addAll(mList); //要导出的内容
-        } else { //加头，合成最后要导出的文件
-            resultList.add(baseInforDao.imQueryOne(0));
-            for (int i = 0; i < mList.size(); i++) {
-                resultList.add(i + 1, mList.get(i));
-            }
+        if ("卡号EPC".equals(mList.get(0).getACardEPC())) { //有头需要处理，无头不需要处理
+                mList.remove(0);
         }
+
+        resultList.addAll(mList); //要导出的内容
+
 
         //导出到文件, 自定义一个文件名
         try {
@@ -322,6 +320,12 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
     //显示点击item后的匹配信息
     private void changeCount(int position) {
         BaseInfor message = mList.get(position);
+
+        //item的解决方案按钮
+        if (("卡号EPC").equals(message.getACardEPC())) {
+            return;
+        }
+
         String show = "";
         show = showResult(message);
 

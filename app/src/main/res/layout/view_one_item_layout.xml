@@ -16,7 +16,7 @@
 
         <TextView
             android:singleLine="false"
-            android:layout_weight="4"
+            android:layout_weight="5"
             android:layout_gravity="center"
             android:text="R11111RR11R1RR1R11111111"
             android:textSize="@dimen/sp15"

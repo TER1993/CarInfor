@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.speedata.carinfor.application.CustomerApplication;
 import com.speedata.carinfor.db.bean.BaseInfor;
@@ -33,8 +34,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         initView();
-
-
     }
 
     private void initView() {
@@ -83,6 +82,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 ProgressDialogUtils.showProgressDialog(mContext, "正在进入信息查询页面...");
                 Intent intent2 = new Intent(MainActivity.this, QueryActivity.class);
                 startActivity(intent2);
+                break;
+
+            case R.id.btn_clear:
+
+                baseInforDao.imDeleteAll();
+
+                Toast.makeText(this, "已清空数据库", Toast.LENGTH_SHORT).show();
                 break;
 
         }

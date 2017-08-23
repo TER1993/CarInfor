@@ -6,20 +6,21 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:visibility="gone"
+
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:orientation="horizontal"
         >
 
         <TextView
-            android:text="导入excel表格"
+            android:text="清除数据库数据"
             android:textSize="25sp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
 
         <Button
+            android:visibility="gone"
             android:layout_marginRight="30dp"
             android:layout_marginEnd="30dp"
             android:id="@+id/btn_import"
@@ -34,7 +35,7 @@
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="导出测试"
+            android:text="清除数据"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="@drawable/bg_alibuybutton" />
