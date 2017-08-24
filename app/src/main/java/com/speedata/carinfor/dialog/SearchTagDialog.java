@@ -217,12 +217,14 @@ public class SearchTagDialog extends Dialog implements
         }
         int res = iuhfService.select_card(1,firm.get(arg2).epc,true);
         if (res == 0) {
+
+            Toast.makeText(cont, "选卡成功", Toast.LENGTH_SHORT).show();
             if (mSListener != null) {
                 mSListener.onSetting(firm.get(arg2).epc);
             }
             CustomerApplication.getInstance().setEPC(firm.get(arg2).epc);
-            Toast.makeText(cont, "选卡成功", Toast.LENGTH_SHORT).show();
             dismiss();
+
         } else {
             Toast.makeText(cont, "选卡失败", Toast.LENGTH_SHORT).show();
         }

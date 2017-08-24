@@ -165,7 +165,7 @@ public class InforActivity extends Activity implements View.OnClickListener, Dia
                         mBrand = spBrand
                                 .getSelectedItem().toString();
 
-                        Toast.makeText(mContext, "选择成功", Toast.LENGTH_SHORT).show();
+
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> arg0) {
@@ -196,7 +196,7 @@ public class InforActivity extends Activity implements View.OnClickListener, Dia
                         mColor = spColor
                                 .getSelectedItem().toString();
 
-                        Toast.makeText(mContext, "选择成功", Toast.LENGTH_SHORT).show();
+
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> arg0) {

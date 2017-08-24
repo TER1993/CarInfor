@@ -199,7 +199,6 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
 
 
 
-
         // 创建退出时的对话框，此处根据需要显示的先后顺序决定按钮应该使用Neutral、Negative或Positive
         DialogButtonOnClickListener dialogButtonOnClickListener = new DialogButtonOnClickListener();
         mExitDialog = new AlertDialog.Builder(this)
@@ -437,7 +436,7 @@ public class QueryActivity extends Activity implements View.OnClickListener, Dia
             baseInfors = baseInforDao.imQueryList("ACardEPC=?", new String[]{input});
             Log.d(TAG, "没搜到品牌");
             if (baseInfors.size() == 0) { //没搜到结果
-                Toast.makeText(this, "没有搜索到匹配的结果，请确认搜索内容是否正确", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "没有搜索到匹配的结果", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "没搜到EPC");
             } else { //搜到匹配的EPC结果
                 mList.clear();
