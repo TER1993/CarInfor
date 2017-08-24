@@ -105,7 +105,7 @@
                 android:id="@+id/rv_one_content"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:minHeight="@dimen/dp250"
+                android:minHeight="@dimen/dp280"
                 android:layout_margin="@dimen/dp5"
                 android:layout_weight="1" />
 
@@ -116,9 +116,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 >
-
                 <Button
-
                     android:layout_marginTop="@dimen/dp5"
                     android:layout_marginLeft="@dimen/dp10"
                     android:layout_marginRight="@dimen/dp10"
@@ -145,11 +143,7 @@
                     android:text="导出信息" />
             </LinearLayout>
 
-
         </LinearLayout>
-
-
-
 
 
 </LinearLayout>
