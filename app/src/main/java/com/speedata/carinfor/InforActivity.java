@@ -286,7 +286,7 @@ public class InforActivity extends Activity implements View.OnClickListener, Dia
         baseInforDao.imDelete("ACardEPC=?", new String[]{baseInfor.getACardEPC()});
         baseInforDao.imInsert(baseInfor);
 
-        Toast.makeText(this, "导入成功", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "信息写入成功", Toast.LENGTH_SHORT).show();
 
     }
 
