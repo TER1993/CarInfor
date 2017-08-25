@@ -6,14 +6,14 @@
     android:orientation="vertical" >
 
     <LinearLayout
-
+        android:background="@color/gray_light"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:orientation="horizontal"
         >
 
         <TextView
-            android:text="清除数据库数据"
+            android:text="  删除数据库数据"
             android:textSize="25sp"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -32,20 +32,26 @@
             android:background="@drawable/bg_alibuybutton" />
 
         <Button
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp3"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp3"
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="清除数据"
+            android:text="删除"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
-            android:background="@drawable/bg_alibuybutton" />
+            android:background="@drawable/bg_click" />
 
 
     </LinearLayout>
 
     <TextView
-        android:textColor="@color/color_light_blue"
-        android:textSize="@dimen/sp50"
+        android:layout_marginTop="@dimen/dp20"
+        android:textColor="@color/color_dark_blue"
+        android:textSize="@dimen/sp75"
         android:gravity="center"
         android:text="永银安华"
         android:layout_width="match_parent"
@@ -66,20 +72,21 @@
 
 
             <ImageView
-                android:src="@mipmap/u18"
+                android:src="@mipmap/img_create_list"
                 android:id="@+id/iv_write"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_weight="4"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:contentDescription=""
                 />
             <TextView
+                android:layout_marginTop="@dimen/dp2"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_weight="1"
                 android:text="信息录入"
                 />
@@ -94,10 +101,10 @@
 
 
             <ImageView
-                android:src="@mipmap/u25"
+                android:src="@mipmap/query_img2"
                 android:id="@+id/iv_check"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_weight="4"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
@@ -105,12 +112,12 @@
                 />
 
             <TextView
-
+                android:layout_marginTop="@dimen/dp2"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:text="信息查询"
                 />
 

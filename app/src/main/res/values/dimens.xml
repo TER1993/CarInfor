@@ -33,4 +33,7 @@
     <dimen name="dp250">250dp</dimen>
     <dimen name="sp50">50sp</dimen>
     <dimen name="dp280">280dp</dimen>
+    <dimen name="sp100">100sp</dimen>
+    <dimen name="sp75">75sp</dimen>
+    <dimen name="dp3">3dp</dimen>
 </resources>
